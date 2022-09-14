@@ -8,10 +8,10 @@ eventEmitter.on("click", function (data, secondData) {
 })
 
 console.log("first console log before click events")
-setTimeout(function () {
+setTimeout(function () { 
 	eventEmitter.emit(
 		"click",
 		"kire beta click korsi ter pas na",
-		"4 ta click marsi beta"
+		"4 ta click marsi"
 	)
 }, 3000)
