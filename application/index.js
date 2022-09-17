@@ -1,14 +1,14 @@
 /* This is index of application  */
 
-const dbConnect = require("./utils/dbConnect.js");
-const express = require("express");
-require("dotenv").config();
+const dbConnect = require("./utils/dbConnect.js")
+const express = require("express")
+require("dotenv").config()
 
 /* application */
-const app = express();
+const app = express()
 
 /* connect to database */
-dbConnect();
+dbConnect()
 
 /* listening server */
 try {
@@ -16,7 +16,7 @@ try {
     console.log(
       `server listening on ${process.env.hostname}:${process.env.port}`
     )
-  );
+  )
 } catch (error) {
-  console.log(error);
+  console.log(error)
 }
