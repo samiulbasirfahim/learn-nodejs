@@ -46,7 +46,25 @@ const getUser = (req, res) => {
   }
 }
 
+const deleteUser = (req, res) => {
+  const id = req.params.id
+  if (id) {
+    User.findByIdAndDelete(id, (err, result) => {
+      if (err) {
+        res.json({ message: "something went wrong", status: false })
+      } else if (result) {
+        res.json(result)
+      } else {
+        res.json({ message: "user not found", status: false })
+      }
+    })
+  } else {
+    res.json({ message: "You should provide an id", status: false })
+  }
+}
+
 module.exports = {
   addUser,
   getUser,
+  deleteUser,
 }
